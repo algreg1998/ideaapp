@@ -1,18 +1,18 @@
+
 <p id="notice"><%= notice %></p>
 
+
+  <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></p>
 <p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
+  <h1><strong>Name:</strong><%= @idea.name %></h1>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
+<h1><strong>Description:</strong><%= @idea.description %></h1>
 </p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @idea.picture %></p>
+  
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= link_to 'Edit'.html_safe, edit_idea_path(@idea) ,  :class => "btn btn-warning "  %>
+<%= link_to 'Back'.html_safe, ideas_path,  :class => "btn btn-primary"  %>
+<%= link_to 'Destroy'.html_safe, @idea, method: :delete, data: { confirm: 'Are you sure?' } ,  :class => "btn btn-danger"  %>
